@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 /**
  * print_rev - imprime en reversa
  * @s: string
@@ -23,4 +23,3 @@ void print_rev(char *s)
 
 	_putchar('\n');
 }
-
