@@ -1,63 +1,21 @@
-
 #include "main.h"
 
-
-
-
 /**
-
-
- * _memset - Program fills a block of memory with a specific value
-
-
- * @s: starting address of memory to be filled
-
-
- * @b: the desired value
-
-
- * @n: number of bytes to be changed
-
-
+ * _memset - memset func
+ * @s: pointer var s
+ * @b: value(s) to be chabed
+ * @n: the index
  *
-
-
- * Return: change array with new value for n bytes
-
-
+ * Return: returns *s
  */
 
-
 char *_memset(char *s, char b, unsigned int n)
-
-
 {
+	unsigned int i;
 
-
-   	int a = 0;
-
-
- 
-
-
-   	for (; n > 0; a++)
-
-
-   	{
-
-
-          	s[a] = b;
-
-
-          	n--;
-
-
-   	}
-
-
-   	return (s);
-
-
+	for (i = 0; i < n; i++)
+	{
+		s[i] = b;
+	}
+	return (s);
 }
-
-
