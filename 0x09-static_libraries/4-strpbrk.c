@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strpbrk - func
+ * _strpbrk - function
  * @s: pointer vars s
  * @accept: pointer to char
  * Return: NULL
