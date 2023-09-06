@@ -1,27 +1,28 @@
 #include "main.h"
+
 /**
- * _strstr - Entry point
- * @haystack: input
- * @needle: input
- * Return: Always 0 (Success)
+ * _strstr - searching func
+ * @haystack: 1st ag
+ * @needle: 2nd ag
+ * Return: 0
  */
+
 char *_strstr(char *haystack, char *needle)
 {
-        	for (; *haystack != '\0'; haystack++)
-        	{
-                    	char *l = haystack;
-                    	char *p = needle;
- 
-                    	while (*l == *p && *p != '\0')
-                    	{
-                                	l++;
-                                	p++;
-                    	}
- 
-                    	if (*p == '\0')
-                                	return (haystack);
-        	}
- 
-        	return (0);
-}
+	char *res = haystack, *fneedle = needle;
 
+	while (*haystack)
+	{
+		while (*needle)
+		{
+			if (*haystack++ != *needle++)
+				break;
+		}
+		if (!*needle)
+			return (res);
+		needle = fneedle;
+		res++;
+		haystack = res;
+	}
+	return (0);
+}
