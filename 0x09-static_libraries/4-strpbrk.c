@@ -1,24 +1,26 @@
 #include "main.h"
+
 /**
- * _strpbrk - Entry point
- * @s: input
- * @accept: input
- * Return: Always 0 (Success)
+ * _strpbrk - func
+ * @s: pointer vars s
+ * @accept: pointer to char
+ * Return: NULL
  */
+
 char *_strpbrk(char *s, char *accept)
 {
-        	int k;
- 
-        	while (*s)
-        	{
-                    	for (k = 0; accept[k]; k++)
-                    	{
-                    	if (*s == accept[k])
-                    	return (s);
-                    	}
-        	s++;
-        	}
- 
-return ('\0');
-}
+	int i;
 
+	while (*s)
+	{
+		for (i = 0; accept[i]; i++)
+		{
+			if (*s == accept[i])
+			{
+				return (s);
+			}
+		}
+		s++;
+	}
+	return (NULL);
+}
