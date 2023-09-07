@@ -1,25 +1,28 @@
+#include "main.h"
 /**
- * _strspn - determine length of a substr.
- * @s: str udes to search.
- * @accept: Substr chars.
- * Return: len of occurences.
+ * _strspn - Entry point
+ * @s: input
+ * @accept: input
+ * Return: Always 0 (Success)
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int c = 0;
-	char *t = accept;
-
-	while (*s++)
-	{
-		while (*accept++)
-			if (*(s - 1) == *(accept - 1))
-			{
-				c++;
-				break;
-			}
-		if (!(*--accept))
-			break;
-		accept = t;
-	}
-	return (c);
+        	unsigned int n = 0;
+        	int r;
+ 
+        	while (*s)
+        	{
+                    	for (r = 0; accept[r]; r++)
+                    	{
+                                	if (*s == accept[r])
+                                	{
+                                            	n++;
+                                            	break;
+                                	}
+                                	else if (accept[r + 1] == '\0')
+                                            	return (n);
+                    	}
+                    	s++;
+        	}
+        	return (n);
 }
