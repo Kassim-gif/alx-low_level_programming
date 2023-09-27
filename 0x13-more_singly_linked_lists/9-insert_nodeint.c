@@ -4,33 +4,35 @@
  * find_listint_loop - finds  loop in linked list
  * @head: linked list to search for
  *
- * Return: address of the node where the loop starts, or NULL
- */
-listint_t *find_listint_loop(listint_t *head)
+ * Return: address of the node where the loop starts, or 
+ * /
+ 
+listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *slow = head;
-	listint_t *fast = head;
+	listint_t *new_node, *temp;
+	unsigned int i = 0;
 
-	
-		if (fast == slow)
-		{
-			slow = head;
-			while (slow != fast)
-			{
-				slow = slow->next;
-				fast = fast->next;
-			}
-             if (!head)
+	if (*head == NULL && idx != 0)
 		return (NULL);
-
-	while (slow && fast && fast->next)
+	if (idx != 0)
 	{
-		fast = fast->next->next;
-		slow = slow->next;
-			return (fast);
-		}
+	temp = *head;
+	for (; i < idx - 1 && temp != NULL; i++)
+		temp = temp->next;
+	if (temp == NULL)
+		return (NULL);
 	}
-
-	return (NULL);
+	new_node = malloc(sizeof(listint_t));
+	if (new_node == NULL)
+		return (NULL);
+	new_node->n = n;
+	if (idx == 0)
+	{
+		new_node->next = *head;
+		*head = new_node;
+		return (new_node);
+	}
+	new_node->next = temp->next;
+	temp->next = new_node;
+	return (new_node);
 }
-
