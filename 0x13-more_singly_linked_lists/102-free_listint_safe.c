@@ -1,14 +1,15 @@
 #include "lists.h"
-
+#include <stdio.h>
 /**
- * print_listint_safe - prints linked list, safely
- * @head: list of type listint_t to print
+ * free_listint_safe - frees linked list
+ * @h: pointer to the first node in the linked list
  *
- * Return: number of nodes in the list
+ * Return: number of elements in the freed list
  */
-size_t print_listint_safe(const listint_t *head)
+size_t free_listint_safe(listint_t **h)
 {
 	size_t len = 0;
+	int diff;
 	listint_t *temp;
 
 	if (!h || !*h)
@@ -16,14 +17,19 @@ size_t print_listint_safe(const listint_t *head)
 
 	while (*h)
 	{
-		temp =(*h)-next;
-		free(*h);
-		*h = temp;
-		len++;
-
-		if (temp >= *h)
+		diff = *h - (*h)->next;
+		if (diff > 0)
+		{  
+                       *h = NULL;
+			len++;
+			break;
+			
+		}
+		else
 		{
-			break; // Break loop when is detected
+			temp = (*h)->next;
+			*h = temp;
+			len++;
 		}
 	}
 
