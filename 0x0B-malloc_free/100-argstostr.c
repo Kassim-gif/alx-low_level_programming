@@ -4,7 +4,7 @@
 
 
 /**
- * _len - length of a string
+ * _len - length of  string
  * @s: input char
  * Return: length of a string
  */
