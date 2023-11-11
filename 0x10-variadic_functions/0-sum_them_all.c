@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * sum_them_all - sums  passed parameters
+ * sum_them_all - sums  all passed parameters
  * @n: n of args
  * Return: 0 or sum
  */
