@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * print_listint - prints elements of a listint_t list.
+ * print_listint - prints all the elements of a listint_t list.
  * @h: Pointer to a list.
  * Return: num of items
  **/
